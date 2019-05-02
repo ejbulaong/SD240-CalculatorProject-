@@ -136,6 +136,16 @@ namespace SD240_Calculator
             CallBasicCalculation("^");
         }
 
+        private void BtnSquareRoot_Click(object sender, RoutedEventArgs e)
+        {
+            Calculator.StoredValue = Calculator.EnteredValue;
+            lblDisplay.Content = "√" + Calculator.StoredValue;
+
+            Calculator.EnteredValue = Math.Sqrt(Convert.ToDouble(Calculator.EnteredValue)).ToString();
+            Calculator.StoredValue = "";
+            txtDisplay.Text = Calculator.EnteredValue;
+        }
+
         private void BtnEquals_Click(object sender, RoutedEventArgs e)
         {
             if (Calculator.StoredValue != "" &&
