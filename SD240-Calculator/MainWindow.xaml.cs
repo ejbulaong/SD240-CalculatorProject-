@@ -31,67 +31,62 @@ namespace SD240_Calculator
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
-
+            Calculator.EnteredValue = "";
+            Calculator.StoredValue = "";
+            Calculator.Operator = "";
+            lblDisplay.Content = "";
+            lblOperator.Content = "";
+            txtDisplay.Text = "0";
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
         {
-            Calculator.EnteredValue += "1";
-            txtDisplay.Text = Calculator.EnteredValue;
+            InputValue("1");
         }
 
         private void Btn2_Click(object sender, RoutedEventArgs e)
         {
-            Calculator.EnteredValue += "2";
-            txtDisplay.Text = Calculator.EnteredValue;
+            InputValue("2");
         }
 
         private void Btn3_Click(object sender, RoutedEventArgs e)
         {
-            Calculator.EnteredValue += "3";
-            txtDisplay.Text = Calculator.EnteredValue;
+            InputValue("3");
         }
 
         private void Btn4_Click(object sender, RoutedEventArgs e)
         {
-            Calculator.EnteredValue += "4";
-            txtDisplay.Text = Calculator.EnteredValue;
+            InputValue("4");
         }
 
         private void Btn5_Click(object sender, RoutedEventArgs e)
         {
-            Calculator.EnteredValue += "5";
-            txtDisplay.Text = Calculator.EnteredValue;
+            InputValue("5");
         }
 
         private void Btn6_Click(object sender, RoutedEventArgs e)
         {
-            Calculator.EnteredValue += "6";
-            txtDisplay.Text = Calculator.EnteredValue;
+            InputValue("6");
         }
 
         private void Btn7_Click(object sender, RoutedEventArgs e)
         {
-            Calculator.EnteredValue += "7";
-            txtDisplay.Text = Calculator.EnteredValue;
+            InputValue("7");
         }
 
         private void Btn8_Click(object sender, RoutedEventArgs e)
         {
-            Calculator.EnteredValue += "8";
-            txtDisplay.Text = Calculator.EnteredValue;
+            InputValue("8");
         }
 
         private void Btn9_Click(object sender, RoutedEventArgs e)
         {
-            Calculator.EnteredValue += "9";
-            txtDisplay.Text = Calculator.EnteredValue;
+            InputValue("9");
         }
 
         private void Btn0_Click(object sender, RoutedEventArgs e)
         {
-            Calculator.EnteredValue += "0";
-            txtDisplay.Text = Calculator.EnteredValue;
+            InputValue("0");
         }
 
         private void BtnDecimal_Click(object sender, RoutedEventArgs e)
@@ -99,14 +94,21 @@ namespace SD240_Calculator
             if (!Calculator.EnteredValue.Contains("."))
                 if (Calculator.EnteredValue == string.Empty)
                 {
-                    Calculator.EnteredValue += "0.";
-                    txtDisplay.Text = Calculator.EnteredValue;
+                    InputValue("0.");
                 }
                 else
                 {
-                    Calculator.EnteredValue += ".";
-                    txtDisplay.Text = Calculator.EnteredValue;
+                    InputValue(".");
                 }
+        }
+
+        private void InputValue(string val)
+        {
+            if (Calculator.EnteredValue.Length < 16)
+            {
+                Calculator.EnteredValue += val;
+                txtDisplay.Text = Calculator.EnteredValue;
+            }
         }
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
