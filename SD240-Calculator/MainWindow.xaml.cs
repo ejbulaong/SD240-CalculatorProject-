@@ -31,12 +31,7 @@ namespace SD240_Calculator
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
-            Calculator.EnteredValue = "";
-            Calculator.StoredValue = "";
-            Calculator.Operator = "";
-            lblDisplay.Content = "";
-            lblOperator.Content = "";
-            txtDisplay.Text = "0";
+            Clear();
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
@@ -102,15 +97,6 @@ namespace SD240_Calculator
                 }
         }
 
-        private void InputValue(string val)
-        {
-            if (Calculator.EnteredValue.Length < 16)
-            {
-                Calculator.EnteredValue += val;
-                txtDisplay.Text = Calculator.EnteredValue;
-            }
-        }
-
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             CallBasicCalculation("+");
@@ -136,14 +122,94 @@ namespace SD240_Calculator
             CallBasicCalculation("^");
         }
 
+        private void BtnFactorial_Click(object sender, RoutedEventArgs e)
+        {
+            if(Calculator.StoredValue == "" && Calculator.Operator == "")
+            {
+                Calculator.Operator = "!";
+                try
+                {
+                    if (Calculator.EnteredValue == "")
+                    {
+                        Calculator.EnteredValue = "0";
+                    }
+
+                    Calculator.StoredValue = Calculator.EnteredValue;
+                    lblDisplay.Content = Calculator.StoredValue + "!";
+
+                    double result = 1;
+                    var number = Convert.ToDouble(Calculator.EnteredValue);
+                    if (number == 0)
+                    {
+                        result = 1;
+                    }
+                    else
+                    {
+                        while (number != 1)
+                        {
+                            result = result * number;
+                            number = number - 1;
+                        }
+                    }
+
+                    Calculator.EnteredValue = result.ToString();
+                    Calculator.StoredValue = "";
+                    txtDisplay.Text = Calculator.EnteredValue;
+
+                }
+                catch
+                {
+                    Clear();
+                    lblDisplay.Content = "Invalid Expression";
+                }
+            }           
+        }
+
+        private void Clear()
+        {
+            Calculator.Operator = "";
+            Calculator.StoredValue = "";
+            Calculator.EnteredValue = "";
+            lblDisplay.Content = "";
+            lblOperator.Content = "";
+            txtDisplay.Text = "0";
+        }
+
+        private void InputValue(string val)
+        {
+            if (Calculator.Operator == "√" || Calculator.Operator == "!")
+            {
+                Clear();
+            }
+
+            if (Calculator.EnteredValue.Length < 16)
+            {
+                Calculator.EnteredValue += val;
+                txtDisplay.Text = Calculator.EnteredValue;
+            }
+        }
+
         private void BtnSquareRoot_Click(object sender, RoutedEventArgs e)
         {
-            Calculator.StoredValue = Calculator.EnteredValue;
-            lblDisplay.Content = "√" + Calculator.StoredValue;
+            Calculator.Operator = "√";
+            try
+            {
+                if (Calculator.EnteredValue == "")
+                {
+                    Calculator.EnteredValue = "0";
+                }
+                Calculator.StoredValue = Calculator.EnteredValue;
+                lblDisplay.Content = "√" + Calculator.StoredValue;
 
-            Calculator.EnteredValue = Math.Sqrt(Convert.ToDouble(Calculator.EnteredValue)).ToString();
-            Calculator.StoredValue = "";
-            txtDisplay.Text = Calculator.EnteredValue;
+                Calculator.EnteredValue = Math.Sqrt(Convert.ToDouble(Calculator.EnteredValue)).ToString();
+                Calculator.StoredValue = "";
+                txtDisplay.Text = Calculator.EnteredValue;
+            }
+            catch
+            {
+                Clear();
+                lblDisplay.Content = "Invalid Expression";
+            }
         }
 
         private void BtnEquals_Click(object sender, RoutedEventArgs e)
@@ -192,7 +258,7 @@ namespace SD240_Calculator
                 }
                 else if (Calculator.StoredValue != "" && Calculator.EnteredValue != "")
                 {
-                    if(Calculator.Operator == "^")
+                    if (Calculator.Operator == "^")
                     {
                         Calculator.StoredValue = Math.Pow(Convert.ToDouble(Calculator.StoredValue),
                             Convert.ToDouble(Calculator.EnteredValue)).ToString();

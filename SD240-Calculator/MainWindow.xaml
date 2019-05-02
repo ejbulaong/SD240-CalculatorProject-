@@ -22,7 +22,7 @@
         <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Margin="158,242,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn9_Click" />
         <Button x:Name="btnClearEntry" Content="CE" HorizontalAlignment="Left" Margin="8,184,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24"/>
         <Button x:Name="btnClear" Content="C" HorizontalAlignment="Left" Margin="83,184,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="BtnClear_Click" />
-        <Button x:Name="btnFactorial" Content="x!" HorizontalAlignment="Left" Margin="83,126,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24"/>
+        <Button x:Name="btnFactorial" Content="x!" HorizontalAlignment="Left" Margin="83,126,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="BtnFactorial_Click"/>
         <Button x:Name="btnPercentage" Content="%" HorizontalAlignment="Left" Margin="8,126,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24"/>
         <Button x:Name="btnSquareRoot" Content="√" HorizontalAlignment="Left" Margin="158,184,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="BtnSquareRoot_Click"/>
         <Button x:Name="btnPower" HorizontalAlignment="Left" Margin="158,126,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="BtnPower_Click">
