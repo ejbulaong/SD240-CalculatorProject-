@@ -14,16 +14,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SD240_Calculator
+namespace CalculatorProject
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Standard.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Standard : Page
     {
         private Calculator Calculator { get; set; }
 
-        public MainWindow()
+        public Standard()
         {
             InitializeComponent();
             Calculator = new Calculator();
@@ -276,7 +276,8 @@ namespace SD240_Calculator
                     {
                         Calculator.StoredValue = Math.Pow(Convert.ToDouble(Calculator.StoredValue),
                             Convert.ToDouble(Calculator.EnteredValue)).ToString();
-                    } else if ((Calculator.Operator == "Mod"))
+                    }
+                    else if ((Calculator.Operator == "Mod"))
                     {
                         Calculator.StoredValue = (Convert.ToInt32(Calculator.StoredValue) % Convert.ToInt32(Calculator.EnteredValue)).ToString();
                     }

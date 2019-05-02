@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SD240_Calculator.Properties
+namespace CalculatorProject.Properties
 {
 
 

@@ -1,0 +1,20 @@
+﻿<Window x:Class="CalculatorProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculatorProject"
+        mc:Ignorable="d"
+        Title="Calculator" Height="520" Width="330"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Menu IsMainMenu="True">
+            <MenuItem Header="Menu">
+                <MenuItem Header="Main" x:Name="main" Click="main_Click" />
+                <MenuItem Header="Standard" x:Name="standard" Click="standard_Click" />
+                <MenuItem Header="Programmer" x:Name="programmer" Click="programmer_Click" />
+            </MenuItem>
+        </Menu>
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden" />
+    </Grid>
+</Window>

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace SD240_Calculator
+namespace CalculatorProject
 {
     /// <summary>
     /// Interaction logic for App.xaml
