@@ -8,9 +8,9 @@
         Title="Calculator" Height="520" Width="330"
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="btnPositiveNegative" Content="+/-" HorizontalAlignment="Left" Margin="8,416,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24"/>
+        <Button x:Name="btnPositiveNegative" Content="+/-" HorizontalAlignment="Left" Margin="8,416,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="BtnPositiveNegative_Click"/>
         <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Margin="83,416,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn0_Click" />
-        <Button x:Name="btnDecimal" Content="." HorizontalAlignment="Left" Margin="158,416,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24"/>
+        <Button x:Name="btnDecimal" Content="." HorizontalAlignment="Left" Margin="158,416,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="BtnDecimal_Click"/>
         <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Margin="8,358,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn1_Click" />
         <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" Margin="83,358,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn2_Click" />
         <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" Margin="158,358,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn3_Click" />
