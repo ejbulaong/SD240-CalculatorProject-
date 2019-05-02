@@ -122,9 +122,14 @@ namespace SD240_Calculator
             CallBasicCalculation("^");
         }
 
+        private void BtnMod_Click(object sender, RoutedEventArgs e)
+        {
+            CallBasicCalculation("Mod");
+        }
+
         private void BtnFactorial_Click(object sender, RoutedEventArgs e)
         {
-            if(Calculator.StoredValue == "" && Calculator.Operator == "")
+            if (Calculator.StoredValue == "" && Calculator.Operator == "")
             {
                 Calculator.Operator = "!";
                 try
@@ -137,15 +142,22 @@ namespace SD240_Calculator
                     Calculator.StoredValue = Calculator.EnteredValue;
                     lblDisplay.Content = Calculator.StoredValue + "!";
 
-                    double result = 1;
-                    var number = Convert.ToDouble(Calculator.EnteredValue);
+                    int result = 1;
+                    var number = Convert.ToInt32(Calculator.EnteredValue);
                     if (number == 0)
                     {
                         result = 1;
                     }
+                    else if (number < 0)
+                    {
+                        Clear();
+                        Calculator.Operator = "!";
+                        lblDisplay.Content = "Number must be >= 0";
+                        return;
+                    }
                     else
                     {
-                        while (number != 1)
+                        while (number >= 1)
                         {
                             result = result * number;
                             number = number - 1;
@@ -160,9 +172,10 @@ namespace SD240_Calculator
                 catch
                 {
                     Clear();
+                    Calculator.Operator = "!";
                     lblDisplay.Content = "Invalid Expression";
                 }
-            }           
+            }
         }
 
         private void Clear()
@@ -177,7 +190,8 @@ namespace SD240_Calculator
 
         private void InputValue(string val)
         {
-            if (Calculator.Operator == "√" || Calculator.Operator == "!")
+            if ((Calculator.Operator == "√" || Calculator.Operator == "!") ||
+                    ((Calculator.Operator == "" && Calculator.StoredValue != "")))
             {
                 Clear();
             }
@@ -262,6 +276,9 @@ namespace SD240_Calculator
                     {
                         Calculator.StoredValue = Math.Pow(Convert.ToDouble(Calculator.StoredValue),
                             Convert.ToDouble(Calculator.EnteredValue)).ToString();
+                    } else if ((Calculator.Operator == "Mod"))
+                    {
+                        Calculator.StoredValue = (Convert.ToInt32(Calculator.StoredValue) % Convert.ToInt32(Calculator.EnteredValue)).ToString();
                     }
                     else
                     {
