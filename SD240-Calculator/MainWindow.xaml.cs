@@ -131,6 +131,11 @@ namespace SD240_Calculator
             CallBasicCalculation("/");
         }
 
+        private void BtnPower_Click(object sender, RoutedEventArgs e)
+        {
+            CallBasicCalculation("^");
+        }
+
         private void BtnEquals_Click(object sender, RoutedEventArgs e)
         {
             if (Calculator.StoredValue != "" &&
@@ -149,6 +154,11 @@ namespace SD240_Calculator
 
         private void CallBasicCalculation(string mathOperator)
         {
+            if (Calculator.EnteredValue == "" && Calculator.StoredValue == "")
+            {
+                Calculator.EnteredValue = "0";
+            }
+
             if (Calculator.Operator != mathOperator && Calculator.Operator != "")
             {
                 Evaluate(Calculator.Operator);
@@ -172,10 +182,18 @@ namespace SD240_Calculator
                 }
                 else if (Calculator.StoredValue != "" && Calculator.EnteredValue != "")
                 {
-                    var expression = Calculator.StoredValue + Calculator.Operator + Calculator.EnteredValue;
-                    double answer;
-                    answer = Convert.ToDouble(new DataTable().Compute(expression, null));
-                    Calculator.StoredValue = answer.ToString();
+                    if(Calculator.Operator == "^")
+                    {
+                        Calculator.StoredValue = Math.Pow(Convert.ToDouble(Calculator.StoredValue),
+                            Convert.ToDouble(Calculator.EnteredValue)).ToString();
+                    }
+                    else
+                    {
+                        var expression = Calculator.StoredValue + Calculator.Operator + Calculator.EnteredValue;
+                        double answer;
+                        answer = Convert.ToDouble(new DataTable().Compute(expression, null));
+                        Calculator.StoredValue = answer.ToString();
+                    }
                 }
 
                 Calculator.EnteredValue = "";

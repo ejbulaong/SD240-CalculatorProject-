@@ -25,7 +25,7 @@
         <Button x:Name="btnFactorial" Content="x!" HorizontalAlignment="Left" Margin="83,126,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24"/>
         <Button x:Name="btnPercentage" Content="%" HorizontalAlignment="Left" Margin="8,126,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24"/>
         <Button x:Name="btnSquareRoot" Content="√" HorizontalAlignment="Left" Margin="158,184,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24"/>
-        <Button x:Name="btnPower" HorizontalAlignment="Left" Margin="158,126,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24">
+        <Button x:Name="btnPower" HorizontalAlignment="Left" Margin="158,126,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="BtnPower_Click">
             <TextBlock>
                     <Run>x</Run>
                     <Run Typography.Variants="Superscript">n</Run>
