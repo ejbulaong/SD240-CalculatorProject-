@@ -5,10 +5,34 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CalculatorProject"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="520" d:DesignWidth="330"
       Title="Programmer">
 
     <Grid>
-        <TextBlock Text="Programmer" VerticalAlignment="Center" FontSize="72" FontWeight="Bold"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="21*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Margin="44,316,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Grid.Row="1" Click="Btn0_Click" />
+        <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Margin="44,258,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Grid.Row="1" Click="Btn1_Click" />
+        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" Margin="119,258,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Grid.Row="1" Click="Btn2_Click" />
+        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" Margin="194,258,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Grid.Row="1" Click="Btn3_Click" />
+        <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" Margin="44,200,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Grid.Row="1" Click="Btn4_Click" />
+        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" Margin="119,200,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Grid.Row="1" Click="Btn5_Click" />
+        <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" Margin="194,200,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Grid.Row="1" Click="Btn6_Click" />
+        <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" Margin="44,142,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Grid.Row="1" Click="Btn7_Click" />
+        <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Margin="119,142,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Grid.Row="1" Click="Btn8_Click" />
+        <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Margin="194,142,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Grid.Row="1" Click="Btn9_Click" />
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="119,316,0,0" VerticalAlignment="Top" Width="145" Height="53" FontSize="24" Grid.Row="1" Click="BtnClear_Click" />
+        <Label x:Name="lblHexValue" Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="68,81,0,0" VerticalAlignment="Top" Width="239" FontSize="18" Grid.RowSpan="2"/>
+        <Label x:Name="lblHex" Content="Hex:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="53" FontSize="18" Grid.RowSpan="2"/>
+        <Label x:Name="lblOctValue" Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="68,20,0,0" VerticalAlignment="Top" Width="239" FontSize="18" Grid.Row="1"/>
+        <Label x:Name="lblOct" Content="Oct:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Width="53" FontSize="18" Grid.Row="1"/>
+        <Label x:Name="lblBinary" Content="Bin:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Width="53" FontSize="18" Grid.Row="1"/>
+        <Label x:Name="lblBinValue" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="68,59,0,0" VerticalAlignment="Top" Width="239" FontSize="18" Grid.Row="1">
+            <TextBlock  x:Name="txtBinValue" TextWrapping="Wrap" />
+        </Label>
+        <TextBox x:Name="txtDisplay" TextChanged="TextChangedEventHandler" TextAlignment="Right" FontSize="30" IsReadOnly="True" HorizontalAlignment="Left" Height="40" Margin="10,28,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="297"/>
+
     </Grid>
 </Page>

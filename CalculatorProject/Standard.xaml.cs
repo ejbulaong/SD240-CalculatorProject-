@@ -238,7 +238,7 @@ namespace CalculatorProject
             Calculator.EnteredValue = "";
 
             txtDisplay.Text = Calculator.EnteredValue;
-            lblDisplay.Content = Calculator.StoredValue;
+            lblDisplay.Content = "Ans: " + Calculator.StoredValue;
             lblOperator.Content = Calculator.Operator;
         }
 

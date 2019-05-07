@@ -12,7 +12,7 @@
             <MenuItem Header="Menu">
                 <MenuItem Header="Main" x:Name="main" Click="main_Click" />
                 <MenuItem Header="Standard" x:Name="standard" Click="standard_Click" />
-                <MenuItem Header="Programmer" x:Name="programmer" Click="programmer_Click" />
+                <MenuItem Header="Programmer" x:Name="programmer" Click="programmer_Click" />               
             </MenuItem>
         </Menu>
         <Frame x:Name="Main" NavigationUIVisibility="Hidden" />
