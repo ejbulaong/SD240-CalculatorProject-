@@ -39,5 +39,40 @@ namespace CalculatorProject
         {
             Main.Content = new Programmer();
         }
+
+        private void percentageConverter_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new PercentageConverter();
+        }
+
+        private void weigthConverter_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new WeightConverter();
+        }
+
+        private void temperatureConverter_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new TemperatureConverter();
+        }
+
+        private void lengthConverter_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new LengthConverter();
+        }
+
+        private void filesizeConverter_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new FileSizeConverter();
+        }
+
+        private void timeConverter_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new TimeConverter();
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }

@@ -55,14 +55,40 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Calculator.cs" />
+    <Compile Include="FileSizeConverter.xaml.cs">
+      <DependentUpon>FileSizeConverter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LengthConverter.xaml.cs">
+      <DependentUpon>LengthConverter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Calculator.cs" />
+    <Compile Include="PercentageConverter.xaml.cs">
+      <DependentUpon>PercentageConverter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Programmer.xaml.cs">
       <DependentUpon>Programmer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProgrammerCalculator.cs" />
+    <Compile Include="Models\ProgrammerCalculator.cs" />
     <Compile Include="Standard.xaml.cs">
       <DependentUpon>Standard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TemperatureConverter.xaml.cs">
+      <DependentUpon>TemperatureConverter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TimeConverter.xaml.cs">
+      <DependentUpon>TimeConverter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WeightConverter.xaml.cs">
+      <DependentUpon>WeightConverter.xaml</DependentUpon>
+    </Compile>
+    <Page Include="FileSizeConverter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LengthConverter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,11 +101,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PercentageConverter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Programmer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Standard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TemperatureConverter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TimeConverter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WeightConverter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

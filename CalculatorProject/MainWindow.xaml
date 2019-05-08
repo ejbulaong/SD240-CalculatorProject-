@@ -12,7 +12,14 @@
             <MenuItem Header="Menu">
                 <MenuItem Header="Main" x:Name="main" Click="main_Click" />
                 <MenuItem Header="Standard" x:Name="standard" Click="standard_Click" />
-                <MenuItem Header="Programmer" x:Name="programmer" Click="programmer_Click" />               
+                <MenuItem Header="Programmer" x:Name="programmer" Click="programmer_Click" />
+                <MenuItem Header="Percentage Converter" x:Name="percentageConverter" Click="percentageConverter_Click" />
+                <MenuItem Header="Weight Converter" x:Name="weigthConverter" Click="weigthConverter_Click" />
+                <MenuItem Header="Temperature Converter" x:Name="temperatureConverter" Click="temperatureConverter_Click" />
+                <MenuItem Header="Length Converter" x:Name="lengthConverter" Click="lengthConverter_Click" />
+                <MenuItem Header="File Size Converter" x:Name="filesizeConverter" Click="filesizeConverter_Click" />
+                <MenuItem Header="Time Converter" x:Name="timeConverter" Click="timeConverter_Click" />
+                <MenuItem Header="Exit" x:Name="exit" Click="exit_Click" />
             </MenuItem>
         </Menu>
         <Frame x:Name="Main" NavigationUIVisibility="Hidden" />
