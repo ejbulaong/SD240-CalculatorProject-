@@ -51,6 +51,7 @@ namespace CalculatorProject
                 TimeCon.EnteredValue = "";
                 lblEnteredValue.Content = "0";
             }
+            Calculate(comboBox1.Text, comboBox2.Text);
         }
 
         private void Btn0_Click(object sender, RoutedEventArgs e)
@@ -140,6 +141,11 @@ namespace CalculatorProject
 
         private void Calculate(string option1, string option2)
         {
+            if(TimeCon.EnteredValue == "" && lblOutputValue != null)
+            {
+                lblOutputValue.Content = "0";
+            }
+
             if (option1 == "Hours" && option2 == "Minutes" && TimeCon.EnteredValue != "")
             {
                 var min = Convert.ToDouble(TimeCon.EnteredValue);
