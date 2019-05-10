@@ -9,14 +9,14 @@ namespace CalculatorProject.Models
     public class TemperatureCalculator
     {
         public string EnteredValue { get; set; }
-        public string CelsiusValue { get; set; }
-        public string FahrenheitValue { get; set; }
+        public double CelsiusValue { get; set; }
+        public double FahrenheitValue { get; set; }
 
         public TemperatureCalculator()
         {
             EnteredValue = "";
-            CelsiusValue = "";
-            FahrenheitValue = "";
+            CelsiusValue = 0;
+            FahrenheitValue = 0;
         }
 
         public double CelsiusToFahrenheit(double temp)

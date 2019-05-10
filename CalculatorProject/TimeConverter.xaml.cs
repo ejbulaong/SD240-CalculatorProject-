@@ -56,8 +56,11 @@ namespace CalculatorProject
 
         private void Btn0_Click(object sender, RoutedEventArgs e)
         {
-            InputValue("0");
-            Calculate(comboBox1.Text, comboBox2.Text);
+            if (TimeCon.EnteredValue != "0")
+            {
+                InputValue("0");
+                Calculate(comboBox1.Text, comboBox2.Text);
+            }
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
@@ -132,6 +135,11 @@ namespace CalculatorProject
 
         private void InputValue(string value)
         {
+            if(TimeCon.EnteredValue == "0" && value != ".")
+            {
+                TimeCon.EnteredValue = "";
+            }
+
             if (TimeCon.EnteredValue.Length < 14)
             {
                 TimeCon.EnteredValue += value;
@@ -149,58 +157,58 @@ namespace CalculatorProject
             if (option1 == "Hours" && option2 == "Minutes" && TimeCon.EnteredValue != "")
             {
                 var min = Convert.ToDouble(TimeCon.EnteredValue);
-                TimeCon.HoursValue = TimeCon.EnteredValue;
-                TimeCon.MinsValue = TimeCon.HourToMinute(min).ToString();
+                TimeCon.HoursValue = Convert.ToDouble(TimeCon.EnteredValue);
+                TimeCon.MinsValue = TimeCon.HourToMinute(min);
                 lblOutputValue.Content = TimeCon.MinsValue;
             }
             else if (option1 == "Hours" && option2 == "Seconds" && TimeCon.EnteredValue != "")
             {
                 var sec = Convert.ToDouble(TimeCon.EnteredValue);
-                TimeCon.HoursValue = TimeCon.EnteredValue;
-                TimeCon.SecsValue = TimeCon.HourToSecond(sec).ToString();
+                TimeCon.HoursValue = Convert.ToDouble(TimeCon.EnteredValue);
+                TimeCon.SecsValue = TimeCon.HourToSecond(sec);
                 lblOutputValue.Content = TimeCon.SecsValue;
             }
             else if (option1 == "Hours" && option2 == "Hours" && TimeCon.EnteredValue != "")
             {
-                TimeCon.HoursValue = TimeCon.EnteredValue;
+                TimeCon.HoursValue = Convert.ToDouble(TimeCon.EnteredValue);
                 lblOutputValue.Content = TimeCon.HoursValue;
             }
             else if (option1 == "Minutes" && option2 == "Hours" && TimeCon.EnteredValue != "")
             {
                 var min = Convert.ToDouble(TimeCon.EnteredValue);
-                TimeCon.MinsValue = TimeCon.EnteredValue;
-                TimeCon.HoursValue = TimeCon.MinuteToHour(min).ToString();
+                TimeCon.MinsValue = Convert.ToDouble(TimeCon.EnteredValue);
+                TimeCon.HoursValue = TimeCon.MinuteToHour(min);
                 lblOutputValue.Content = TimeCon.HoursValue;
             }
             else if (option1 == "Minutes" && option2 == "Seconds" && TimeCon.EnteredValue != "")
             {
                 var min = Convert.ToDouble(TimeCon.EnteredValue);
-                TimeCon.MinsValue = TimeCon.EnteredValue;
-                TimeCon.SecsValue = TimeCon.MinuteToSecond(min).ToString();
+                TimeCon.MinsValue = Convert.ToDouble(TimeCon.EnteredValue);
+                TimeCon.SecsValue = TimeCon.MinuteToSecond(min);
                 lblOutputValue.Content = TimeCon.SecsValue;
             }
             else if (option1 == "Minutes" && option2 == "Minutes" && TimeCon.EnteredValue != "")
             {
-                TimeCon.MinsValue = TimeCon.EnteredValue;
+                TimeCon.MinsValue = Convert.ToDouble(TimeCon.EnteredValue);
                 lblOutputValue.Content = TimeCon.MinsValue;
             }
             else if (option1 == "Seconds" && option2 == "Hours" && TimeCon.EnteredValue != "")
             {
                 var sec = Convert.ToDouble(TimeCon.EnteredValue);
-                TimeCon.SecsValue = TimeCon.EnteredValue;
-                TimeCon.HoursValue = TimeCon.SecondToHour(sec).ToString();
+                TimeCon.SecsValue = Convert.ToDouble(TimeCon.EnteredValue);
+                TimeCon.HoursValue = TimeCon.SecondToHour(sec);
                 lblOutputValue.Content = TimeCon.HoursValue;
             }
             else if (option1 == "Seconds" && option2 == "Minutes" && TimeCon.EnteredValue != "")
             {
                 var sec = Convert.ToDouble(TimeCon.EnteredValue);
-                TimeCon.SecsValue = TimeCon.EnteredValue;
-                TimeCon.MinsValue = TimeCon.SecondToMinute(sec).ToString();
+                TimeCon.SecsValue = Convert.ToDouble(TimeCon.EnteredValue);
+                TimeCon.MinsValue = TimeCon.SecondToMinute(sec);
                 lblOutputValue.Content = TimeCon.MinsValue;
             }
             else if (option1 == "Seconds" && option2 == "Seconds" && TimeCon.EnteredValue != "")
             {
-                TimeCon.SecsValue = TimeCon.EnteredValue;
+                TimeCon.SecsValue = Convert.ToDouble(TimeCon.EnteredValue);
                 lblOutputValue.Content = TimeCon.SecsValue;
             }
         }
@@ -225,9 +233,9 @@ namespace CalculatorProject
         private void Clear()
         {
             TimeCon.EnteredValue = "";
-            TimeCon.HoursValue = "";
-            TimeCon.MinsValue = "";
-            TimeCon.SecsValue = "";
+            TimeCon.HoursValue = 0;
+            TimeCon.MinsValue = 0;
+            TimeCon.SecsValue = 0;
             lblOutputValue.Content = "0";
             lblEnteredValue.Content = "0";
         }

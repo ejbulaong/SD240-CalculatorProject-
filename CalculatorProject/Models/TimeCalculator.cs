@@ -9,16 +9,16 @@ namespace CalculatorProject.Models
     public class TimeCalculator
     {
         public string EnteredValue { get; set; }
-        public string HoursValue { get; set; }
-        public string MinsValue { get; set; }
-        public string SecsValue { get; set; }
+        public double HoursValue { get; set; }
+        public double MinsValue { get; set; }
+        public double SecsValue { get; set; }
 
         public TimeCalculator()
         {
             EnteredValue = "";
-            HoursValue = "";
-            MinsValue = "";
-            SecsValue = "";
+            HoursValue = 0;
+            MinsValue = 0;
+            SecsValue = 0;
         }
 
         public double HourToSecond(double hour)

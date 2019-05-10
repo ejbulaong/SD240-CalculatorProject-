@@ -31,8 +31,11 @@ namespace CalculatorProject
 
         private void Btn0_Click(object sender, RoutedEventArgs e)
         {
-            InputValue("0");
-            Calculate(comboBox1.Text, comboBox2.Text);
+            if (TempCalc.EnteredValue != "0")
+            {
+                InputValue("0");
+                Calculate(comboBox1.Text, comboBox2.Text);
+            }
         }
 
         private void Btn1_Click(object sender, RoutedEventArgs e)
@@ -150,14 +153,19 @@ namespace CalculatorProject
         private void Clear()
         {
             TempCalc.EnteredValue = "";
-            TempCalc.FahrenheitValue = "";
-            TempCalc.CelsiusValue = "";
+            TempCalc.FahrenheitValue = 0;
+            TempCalc.CelsiusValue = 0;
             lblEnteredValue.Content = "0";
             lblOutputValue.Content = "0";
         }
 
         private void InputValue(string val)
         {
+            if (TempCalc.EnteredValue == "0" && val != ".")
+            {
+                TempCalc.EnteredValue = "";
+            }
+
             if (TempCalc.EnteredValue.Length < 14)
             {
                 TempCalc.EnteredValue += val;
@@ -175,25 +183,25 @@ namespace CalculatorProject
             if (option1 == "Celsius" && option2 == "Fahrenheit" && TempCalc.EnteredValue != "")
             {
                 var cel = Convert.ToDouble(TempCalc.EnteredValue);
-                TempCalc.CelsiusValue = TempCalc.EnteredValue;
-                TempCalc.FahrenheitValue = TempCalc.CelsiusToFahrenheit(cel).ToString();
+                TempCalc.CelsiusValue = Convert.ToDouble(TempCalc.EnteredValue);
+                TempCalc.FahrenheitValue = TempCalc.CelsiusToFahrenheit(cel);
                 lblOutputValue.Content = TempCalc.FahrenheitValue;
             }
             else if (option1 == "Fahrenheit" && option2 == "Celsius" && TempCalc.EnteredValue != "")
             {
                 var fah = Convert.ToDouble(TempCalc.EnteredValue);
-                TempCalc.FahrenheitValue = TempCalc.EnteredValue;
-                TempCalc.CelsiusValue = TempCalc.FahrenheitToCelsius(fah).ToString();
+                TempCalc.FahrenheitValue = Convert.ToDouble(TempCalc.EnteredValue);
+                TempCalc.CelsiusValue = TempCalc.FahrenheitToCelsius(fah);
                 lblOutputValue.Content = TempCalc.CelsiusValue;
             }
             else if (option1 == "Fahrenheit" && option2 == "Fahrenheit" && TempCalc.EnteredValue != "")
             {
-                TempCalc.FahrenheitValue = TempCalc.EnteredValue;
+                TempCalc.FahrenheitValue = Convert.ToDouble(TempCalc.EnteredValue);
                 lblOutputValue.Content = TempCalc.FahrenheitValue;
             }
             else if (option1 == "Celsius" && option2 == "Celsius" && TempCalc.EnteredValue != "")
             {
-                TempCalc.CelsiusValue = TempCalc.EnteredValue;
+                TempCalc.CelsiusValue = Convert.ToDouble(TempCalc.EnteredValue);
                 lblOutputValue.Content = TempCalc.CelsiusValue;
             }
         }
