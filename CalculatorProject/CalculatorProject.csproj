@@ -61,6 +61,7 @@
     <Compile Include="LengthConverter.xaml.cs">
       <DependentUpon>LengthConverter.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\FileSizeCalculator.cs" />
     <Compile Include="Models\LengthCalculator.cs" />
     <Compile Include="Models\StandardCalculator.cs" />
     <Compile Include="Models\TemperatureCalculator.cs" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalculatorProject
 {
-    class ProgrammerCalculator
+    public class ProgrammerCalculator
     {
         public string EnteredValue { get; set; }
         public string HexValue { get; set; }
