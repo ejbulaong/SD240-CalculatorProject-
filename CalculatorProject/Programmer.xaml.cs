@@ -75,11 +75,19 @@ namespace CalculatorProject
 
         private void Btn0_Click(object sender, RoutedEventArgs e)
         {
-            InputValue("0");
+            if (ProgrammerCalculator.EnteredValue != "0")
+            {
+                InputValue("0");
+            }
         }
 
         private void InputValue(string value)
         {
+            if (ProgrammerCalculator.EnteredValue == "0")
+            {
+                ProgrammerCalculator.EnteredValue = "";
+            }
+
             if (txtDisplay.Text.Length < 16)
             {
                 ProgrammerCalculator.EnteredValue += value;

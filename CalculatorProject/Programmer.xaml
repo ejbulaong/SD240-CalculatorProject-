@@ -26,8 +26,8 @@
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="119,316,0,0" VerticalAlignment="Top" Width="145" Height="53" FontSize="24" Grid.Row="1" Click="BtnClear_Click" />
         <Label x:Name="lblHexValue" Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="68,81,0,0" VerticalAlignment="Top" Width="239" FontSize="18" Grid.RowSpan="2"/>
         <Label x:Name="lblHex" Content="Hex:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="53" FontSize="18" Grid.RowSpan="2"/>
-        <Label x:Name="lblOctValue" Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="68,20,0,0" VerticalAlignment="Top" Width="239" FontSize="18" Grid.Row="1"/>
-        <Label x:Name="lblOct" Content="Oct:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Width="53" FontSize="18" Grid.Row="1"/>
+        <Label x:Name="lblOctValue" Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="68,25,0,0" VerticalAlignment="Top" Width="239" FontSize="18" Grid.Row="1"/>
+        <Label x:Name="lblOct" Content="Oct:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="53" FontSize="18" Grid.Row="1"/>
         <Label x:Name="lblBinary" Content="Bin:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top" Width="53" FontSize="18" Grid.Row="1"/>
         <Label x:Name="lblBinValue" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="68,59,0,0" VerticalAlignment="Top" Width="239" FontSize="18" Grid.Row="1">
             <TextBlock  x:Name="txtBinValue" TextWrapping="Wrap" />

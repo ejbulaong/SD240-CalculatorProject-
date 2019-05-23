@@ -21,12 +21,12 @@ namespace CalculatorProject
     /// </summary>
     public partial class Standard : Page
     {
-        private Calculator Calculator { get; set; }
+        private StandardCalculator Calculator { get; set; }
 
         public Standard()
         {
             InitializeComponent();
-            Calculator = new Calculator();
+            Calculator = new StandardCalculator();
         }
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)

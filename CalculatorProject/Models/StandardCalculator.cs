@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CalculatorProject
 {
-    class Calculator
+    public class StandardCalculator
     {
         public string StoredValue { get; set; }
         public string Operator { get; set; }
         public string EnteredValue { get; set; }
 
-        public Calculator()
+        public StandardCalculator()
         {
             EnteredValue = "";
             StoredValue = "";

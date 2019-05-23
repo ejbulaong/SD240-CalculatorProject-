@@ -61,9 +61,10 @@
     <Compile Include="LengthConverter.xaml.cs">
       <DependentUpon>LengthConverter.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\Calculator.cs" />
+    <Compile Include="Models\StandardCalculator.cs" />
     <Compile Include="Models\TemperatureCalculator.cs" />
     <Compile Include="Models\TimeCalculator.cs" />
+    <Compile Include="Models\WeightCalculator.cs" />
     <Compile Include="PercentageConverter.xaml.cs">
       <DependentUpon>PercentageConverter.xaml</DependentUpon>
     </Compile>
