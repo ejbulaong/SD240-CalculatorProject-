@@ -9,6 +9,50 @@
       Title="LengthConverter">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="21*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Margin="44,327,0,0" VerticalAlignment="Top" Width="70" Height="42" FontSize="24" Grid.Row="1" Click="Btn0_Click" />
+        <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Margin="44,280,0,0" VerticalAlignment="Top" Width="70" Height="42" FontSize="24" Grid.Row="1" Click="Btn1_Click" />
+        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" Margin="119,280,0,0" VerticalAlignment="Top" Width="70" Height="42" FontSize="24" Grid.Row="1" Click="Btn2_Click" />
+        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" Margin="194,280,0,0" VerticalAlignment="Top" Width="70" Height="42" FontSize="24" Grid.Row="1" Click="Btn3_Click" />
+        <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" Margin="44,233,0,0" VerticalAlignment="Top" Width="70" Height="42" FontSize="24" Grid.Row="1" Click="Btn4_Click" />
+        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" Margin="119,233,0,0" VerticalAlignment="Top" Width="70" Height="42" FontSize="24" Grid.Row="1" Click="Btn5_Click" />
+        <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" Margin="194,233,0,0" VerticalAlignment="Top" Width="70" Height="42" FontSize="24" Grid.Row="1" Click="Btn6_Click" />
+        <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" Margin="44,186,0,0" VerticalAlignment="Top" Width="70" Height="42" FontSize="24" Grid.Row="1" Click="Btn7_Click" />
+        <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Margin="119,186,0,0" VerticalAlignment="Top" Width="70" Height="42" FontSize="24" Grid.Row="1" Click="Btn8_Click" />
+        <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Margin="194,186,0,0" VerticalAlignment="Top" Width="70" Height="42" FontSize="24" Grid.Row="1" Click="Btn9_Click" />
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="194,327,0,0" VerticalAlignment="Top" Width="70" Height="42" FontSize="24" Grid.Row="1" Click="BtnClear_Click" />
+        <Label x:Name="lblMmValue" Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="68,81,0,0" VerticalAlignment="Top" Width="239" FontSize="16" Grid.RowSpan="2"/>
+        <Label x:Name="lblMm" Content="Mm:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" Width="53" FontSize="16" Grid.RowSpan="2"/>
+        <Label x:Name="lblCmValue" Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="68,17,0,0" VerticalAlignment="Top" Width="239" FontSize="16" Grid.Row="1"/>
+        <Label x:Name="lblCm" Content="Cm:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top" Width="53" FontSize="16" Grid.Row="1"/>
+        <Label x:Name="lblM" Content="M:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Width="53" FontSize="16" Grid.Row="1"/>
+        <Label x:Name="lblMValue" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="68,43,0,0" VerticalAlignment="Top" Width="239" FontSize="16" Grid.Row="1">
+            <TextBlock  x:Name="txtBinValue" TextWrapping="Wrap" />
+        </Label>
+        <TextBox x:Name="txtDisplay" TextChanged="TextChangedEventHandler" TextAlignment="Right" FontSize="24" IsReadOnly="True" HorizontalAlignment="Left" Height="40" Margin="68,28,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="239"/>
+        <Label x:Name="lblKm" Content="Km:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Width="53" FontSize="16" Grid.Row="1"/>
+        <Label x:Name="lblKmValue" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="68,74,0,0" VerticalAlignment="Top" Width="239" FontSize="16" Grid.Row="1">
+            <TextBlock  x:Name="txtBinValue1" TextWrapping="Wrap" />
+        </Label>
+        <Label x:Name="lblIn" Content="In:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top" Width="53" FontSize="16" Grid.Row="1"/>
+        <Label x:Name="lblInValue" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="68,105,0,0" VerticalAlignment="Top" Width="239" FontSize="16" Grid.Row="1">
+            <TextBlock  x:Name="txtBinValue2" TextWrapping="Wrap" />
+        </Label>
+        <Button x:Name="btnDecimal" Content="." HorizontalAlignment="Left" Margin="119,327,0,0" VerticalAlignment="Top" Width="70" Height="42" FontSize="24" Click="BtnDecimal_Click" Grid.Row="1"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="53" SelectionChanged="ComboBox1_SelectionChanged">
+            <ComboBoxItem Content="Mm" IsSelected="True"/>
+            <ComboBoxItem Content="Cm"/>
+            <ComboBoxItem Content="M"/>
+            <ComboBoxItem Content="Km"/>
+            <ComboBoxItem Content="In"/>
+            <ComboBoxItem Content="Ft"/>
+        </ComboBox>
+        <Label x:Name="lblFt" Content="Ft:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,137,0,0" VerticalAlignment="Top" Width="53" FontSize="16" Grid.Row="1"/>
+        <Label x:Name="lblFtValue" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="68,136,0,0" VerticalAlignment="Top" Width="239" FontSize="16" Grid.Row="1">
+            <TextBlock  x:Name="txtBinValue3" TextWrapping="Wrap" />
+        </Label>
     </Grid>
 </Page>

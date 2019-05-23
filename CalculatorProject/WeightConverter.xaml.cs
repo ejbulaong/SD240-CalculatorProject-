@@ -86,7 +86,7 @@ namespace CalculatorProject
         {
             if (!WeightCalc.EnteredValue.Contains("."))
             {
-                if (WeightCalc.EnteredValue == string.Empty)
+                if (WeightCalc.EnteredValue == string.Empty || WeightCalc.EnteredValue == "0")
                 {
                     InputValue("0.");
                 }
@@ -147,7 +147,7 @@ namespace CalculatorProject
 
         private void Calculate(string text)
         {
-            if (WeightCalc.EnteredValue == "")
+            if (WeightCalc.EnteredValue == "" || WeightCalc.EnteredValue == ".")
             {
                 return;
             }

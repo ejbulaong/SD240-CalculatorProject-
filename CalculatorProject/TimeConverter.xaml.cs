@@ -121,7 +121,7 @@ namespace CalculatorProject
         {
             if (!TimeCon.EnteredValue.Contains("."))
             {
-                if (TimeCon.EnteredValue == string.Empty)
+                if (TimeCon.EnteredValue == string.Empty || TimeCon.EnteredValue == "0")
                 {
                     InputValue("0.");
                 }

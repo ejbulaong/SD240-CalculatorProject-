@@ -87,7 +87,7 @@ namespace CalculatorProject
         private void BtnDecimal_Click(object sender, RoutedEventArgs e)
         {
             if (!Calculator.EnteredValue.Contains("."))
-                if (Calculator.EnteredValue == string.Empty)
+                if (Calculator.EnteredValue == string.Empty || Calculator.EnteredValue == "0")
                 {
                     InputValue("0.");
                 }

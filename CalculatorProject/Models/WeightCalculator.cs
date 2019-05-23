@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalculatorProject.Models
 {
-    class WeightCalculator
+    public class WeightCalculator
     {
         public string EnteredValue { get; set; }
         public double MgValue { get; set; }
