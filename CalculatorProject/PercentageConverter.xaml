@@ -9,6 +9,28 @@
       Title="PercentageConverter">
 
     <Grid>
-        
+        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Margin="122,416,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn0_Click" />
+        <Button x:Name="btnDecimal" Content="." HorizontalAlignment="Left" Margin="197,416,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="BtnDecimal_Click"/>
+        <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Margin="47,358,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn1_Click" />
+        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" Margin="122,358,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn2_Click" />
+        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" Margin="197,358,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn3_Click" />
+        <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" Margin="47,300,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn4_Click" />
+        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" Margin="122,300,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn5_Click" />
+        <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" Margin="197,300,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn6_Click" />
+        <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" Margin="47,242,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn7_Click" />
+        <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Margin="122,242,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn8_Click" />
+        <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Margin="197,242,0,0" VerticalAlignment="Top" Width="70" Height="53" FontSize="24" Click="Btn9_Click" />
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="10,184,0,0" VerticalAlignment="Top" Width="145" Height="53" FontSize="24" Click="BtnClear_Click" />
+        <Button x:Name="btnDel" Content="Del" HorizontalAlignment="Left" Margin="160,184,0,0" VerticalAlignment="Top" Width="147" Height="53" FontSize="24" Click="BtnDel_Click"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox1_SelectionChanged">
+            <ComboBoxItem Content="Decimal" IsSelected="True"/>
+            <ComboBoxItem Content="Percentage"/>
+        </ComboBox>
+        <Label x:Name="lblEnteredValue" HorizontalContentAlignment="Right" Content="0" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="297" FontSize="36"/>
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox2_SelectionChanged" >
+            <ComboBoxItem Content="Decimal"/>
+            <ComboBoxItem Content="Percentage" IsSelected="True"/>
+        </ComboBox>
+        <Label x:Name="lblOutputValue" HorizontalContentAlignment="Right" Content="0" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" Width="297" FontSize="24"/>
     </Grid>
 </Page>

@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Models\FileSizeCalculator.cs" />
     <Compile Include="Models\LengthCalculator.cs" />
+    <Compile Include="Models\PercentageCalculator.cs" />
     <Compile Include="Models\StandardCalculator.cs" />
     <Compile Include="Models\TemperatureCalculator.cs" />
     <Compile Include="Models\TimeCalculator.cs" />
