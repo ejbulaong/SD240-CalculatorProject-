@@ -274,32 +274,8 @@ namespace CalculatorProject
         {
             try
             {
-                if (Calculator.StoredValue == "")
-                {
-                    Calculator.StoredValue = Calculator.EnteredValue;
-                }
-                else if (Calculator.StoredValue != "" && Calculator.EnteredValue != "")
-                {
-                    if (Calculator.Operator == "^")
-                    {
-                        Calculator.StoredValue = Math.Pow(Convert.ToDouble(Calculator.StoredValue),
-                            Convert.ToDouble(Calculator.EnteredValue)).ToString();
-                    }
-                    else if ((Calculator.Operator == "Mod"))
-                    {
-                        Calculator.StoredValue = (Convert.ToInt32(Calculator.StoredValue) % Convert.ToInt32(Calculator.EnteredValue)).ToString();
-                    }
-                    else
-                    {
-                        var expression = Calculator.StoredValue + Calculator.Operator + Calculator.EnteredValue;
-                        double answer;
-                        answer = Convert.ToDouble(new DataTable().Compute(expression, null));
-                        Calculator.StoredValue = answer.ToString();
-                    }
-                }
-
+                Calculator.Evaluate(mathOperator);
                 Calculator.EnteredValue = "";
-
                 txtDisplay.Text = Calculator.EnteredValue;
                 lblDisplay.Content = Calculator.StoredValue;
                 lblOperator.Content = Calculator.Operator;

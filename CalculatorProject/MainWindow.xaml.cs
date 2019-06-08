@@ -23,6 +23,7 @@ namespace CalculatorProject
         public MainWindow()
         {
             InitializeComponent();
+            Main.Content = new Standard();
         }
 
         private void main_Click(object sender, RoutedEventArgs e)
