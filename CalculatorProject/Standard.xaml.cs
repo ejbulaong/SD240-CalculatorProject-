@@ -81,7 +81,10 @@ namespace CalculatorProject
 
         private void Btn0_Click(object sender, RoutedEventArgs e)
         {
-            InputValue("0");
+            if (Calculator.EnteredValue != "0" && Calculator.EnteredValue != "-0")
+            {
+                InputValue("0");
+            }
         }
 
         private void BtnDecimal_Click(object sender, RoutedEventArgs e)
@@ -194,6 +197,11 @@ namespace CalculatorProject
                     ((Calculator.Operator == "" && Calculator.StoredValue != "")))
             {
                 Clear();
+            }
+
+            if (Calculator.EnteredValue == "0")
+            {
+                Calculator.EnteredValue = "";
             }
 
             if (Calculator.EnteredValue.Length < 16)
@@ -312,17 +320,29 @@ namespace CalculatorProject
             {
                 Calculator.EnteredValue = "";
             }
+            else if (Calculator.EnteredValue == "0")
+            {
+                Calculator.EnteredValue = "-0";
+            }
             else
             {
-                var val = Convert.ToDouble(Calculator.EnteredValue);
-                if (val > 0)
+                try
                 {
-                    Calculator.EnteredValue = Calculator.EnteredValue.Insert(0, "-");
+                    var val = Convert.ToDouble(Calculator.EnteredValue);
+                    if (val > 0)
+                    {
+                        Calculator.EnteredValue = Calculator.EnteredValue.Insert(0, "-");
+                    }
+                    else
+                    {
+                        Calculator.EnteredValue = Calculator.EnteredValue.Remove(0, 1);
+                    }
                 }
-                else
+                catch
                 {
-                    Calculator.EnteredValue = Calculator.EnteredValue.Remove(0, 1);
+                    Clear();
                 }
+
             }
             txtDisplay.Text = Calculator.EnteredValue;
         }
